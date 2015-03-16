@@ -3,6 +3,7 @@ import web
 urls = (
     '/', 'index',
     # first string - regex of URI, second string - class name
+    # ex: localhost:8080/square calls square class
     '/square', 'square',
     '/triangle', 'triangle',
     '/diamond', 'diamond',

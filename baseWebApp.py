@@ -5,6 +5,7 @@ urls = (
     # first string - regex of URI, second string - class name
 )
 
+# class that is called when URI is hit
 class index:
     def GET(self):
         return "Hello, world!"

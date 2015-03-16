@@ -19,23 +19,27 @@ class index:
 
 class number:
     def GET(self):
-        # gets a number and then displays it
-        # good first step for students
+        # Displays number entered in URI
+        # Can be used as a first step
         input = web.input()
         return input.number
 
 class multi:
     def GET(self):
-        # gets a number and then shows that number multiplied by 2,5,10,25, and 100
-        # students may be interested in finding how large of a number they can enter
+        # Gets a number from URI and displays that number multiplied by 2,5,10,25, and 100
+        # Can be modified to whatever the students want
         input = web.input()
         num = int(input.number)
-        return str(num*2) + "\n" + str(num*5) + "\n" + str(num*10) \
-        + "\n" + str(num*25) + "\n" + str(num*100)
+        return "x2: " + str(num*2) + "\nx5: " + str(num*5) + "\nx10: " + str(num*10) \
+        + "\nx25: " + str(num*25) + "\nx100: " + str(num*100)
 
 class range:
 	def GET(self):
-		# gets a number and then displays the range the number is in
+		# Gets a number from URI and displays which of the following ranges the number is in:
+        #  < 10
+        # 10 - 100
+        # 100 - 1000
+        # > 1000
 		input = web.input()
 		num = int(input.number)
 		if num < 10:
@@ -49,10 +53,9 @@ class range:
 
 class binary:
     def GET(self):
-        # gets a number and then shows the binary value of that number
-        # coders know what binary is, so this may be of interest to them
-        # normally "0b" is given in front of the number (as in the first output)
-        # the second output gives the binary number without the "0b"
+        # Gets a number and then shows the binary value of that number
+        # When converting to binary, the output is displayed with "0b" appended to the front
+        # The second output shows the binary number without the "0b"
         input = web.input()
         num = int(input.number)
         return str(bin(num)) + "\n" + str(bin(num)[2:])

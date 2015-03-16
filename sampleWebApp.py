@@ -3,6 +3,7 @@ import web
 urls = (
     '/', 'index',
     # first string - regex of URI, second string - class name
+    # ex: localhost:8080/parameter will call the parameter class below
     '/parameter', 'parameter',
     '/ifStatement', 'ifStatement',
     '/function','function')
@@ -15,7 +16,7 @@ class index:
 class parameter:
     def GET(self):
         # Creates tuple with input from URI
-        # ex: URI localhost:8080/parameter?name=Justin will print "Bye, Justin!"
+        # ex: URI localhost:8080/parameter?name=Fido will print "Bye, Fido!"
         # Pull value of tuple by key provided through URI
         input = web.input()
         return "Bye, " + input.name + "!"
